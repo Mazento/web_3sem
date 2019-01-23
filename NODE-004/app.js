@@ -17,8 +17,7 @@ const getN = n =>
             buf+=d;
         });
         r.on('end', () => {
-            resultArray.push({ n: currentN, data: buf.length });
-            console.log(`N: ${currentN}, size: ${buf.length}`);
+            resultArray.push({ n: currentN, size: buf.length });
             if(currentN < maxN) {
                 currentN += 1;
                 getN(currentN);
